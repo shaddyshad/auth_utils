@@ -1,5 +1,5 @@
 {
-  "name": "auth_utils",
+  "name": "@shaddyshad/auth_utils",
   "version": "1.0.0",
   "description": "MongoDB realm auth utils",
   "author": "shaddyshad",
