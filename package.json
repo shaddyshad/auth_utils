@@ -1,6 +1,6 @@
 {
   "name": "@shaddyshad/auth_utils",
-  "version": "1.0.0",
+  "version": "1.0.4",
   "description": "MongoDB realm auth utils",
   "author": "shaddyshad",
   "license": "MIT",
