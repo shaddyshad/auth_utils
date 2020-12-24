@@ -8,6 +8,8 @@
 
 ```bash
 npm install --save auth_utils
+
+yarn add auth_utils
 ```
 
 ## Usage
@@ -15,13 +17,48 @@ npm install --save auth_utils
 ```jsx
 import React, { Component } from 'react'
 
-import MyComponent from 'auth_utils'
-import 'auth_utils/dist/index.css'
+import {AuthContextProvider} from 'auth_utils'
+
+// declare the app id from mongo db realm
+const appId = "YOUR_REALM_APP_ID"
 
 class Example extends Component {
   render() {
-    return <MyComponent />
+    return (
+      <AuthContextProvider appId={appId} >
+          <OtherComponents />
+      </AuthContextProvider>
+    )
   }
+}
+```
+
+### In the login page 
+
+```jsx 
+import React, {useState} from 'react'
+import {useAuth} from 'auth_utils'
+
+const Signin = (props) => {
+  const [email, setEmail] = useState("")
+  const [password, setPassword] = useState("")
+
+  const auth = useAuth()
+
+  const onSignin = () => {
+    auth.login(email, password)
+      .then(() => {
+        // succesfully signed in
+      }).catch(err => {
+        // handle the error 
+        // {error: str, error_code: str...}
+      })
+  }
+
+
+  return (
+    <SigninUi onSigin={onSigin} />
+  )
 }
 ```
 
