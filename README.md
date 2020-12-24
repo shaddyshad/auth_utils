@@ -7,9 +7,9 @@
 ## Install
 
 ```bash
-npm install --save auth_utils
+npm install --save @shaddyshad/auth_utils
 
-yarn add auth_utils
+yarn add @shaddyshad/auth_utils
 ```
 
 ## Usage
