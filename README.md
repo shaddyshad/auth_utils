@@ -2,7 +2,7 @@
 
 > MongoDB realm auth utils
 
-[![NPM](https://img.shields.io/npm/v/auth_utils.svg)](https://www.npmjs.com/package/@shaddyshad/auth_utils) [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
+ [![JavaScript Style Guide](https://img.shields.io/badge/code_style-standard-brightgreen.svg)](https://standardjs.com)
 
 ## Install
 
