@@ -62,7 +62,7 @@ const provideAuth = appId => {
         }
 
         // call the reset function 
-        return app.emailPasswordAuth.callResetPasswordFunction(email, params)
+        return app.emailPasswordAuth.callResetPasswordFunction(email, password)
      }
 
     return {
