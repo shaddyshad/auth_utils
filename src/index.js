@@ -35,7 +35,7 @@ const provideAuth = appId => {
      * Check if is logged in 
      */
 
-     const isLoggedIn = () => app.currentUser.isLoggedIn
+     const isLoggedIn = () => app.currentUser &&  app.currentUser.isLoggedIn
 
      /**
       * Logout action
