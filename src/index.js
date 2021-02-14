@@ -42,12 +42,37 @@ const provideAuth = appId => {
       */
      const logout = async () => await app.currentUser.logOut()
 
+     /**
+      * Send a password reset request
+      */
+     const sendPasswordReset = async email => await app.emailPasswordAuth.sendResetPasswordEmail(email)
+
+     /**
+      * Confirm password reset from tokenId and tokenSecret
+      * 
+      * tokenId and token are retrieved from the url parameters
+      */
+     const resetPassword = async (email, password) => {
+        const params = new URLSearchParams(window.location.search)
+        const token = params.get('token')
+        const tokenId = params.get('tokenId')
+
+        if(!token || !tokenId){
+            throw new Error("You can only call resetPassword() if the user followed a confirmation email link")
+        }
+
+        // call the reset function 
+        return app.emailPasswordAuth.callResetPasswordFunction(email, params)
+     }
+
     return {
         user,
         app,
         login,
         isLoggedIn,
-        logout
+        logout,
+        sendPasswordReset,          // initiate password reset
+        resetPassword
     }
 }
 
