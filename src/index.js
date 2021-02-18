@@ -65,6 +65,9 @@ const provideAuth = appId => {
         return app.emailPasswordAuth.callResetPasswordFunction(email, password)
      }
 
+     /** get the current user */
+     const currentUser = () => app.currentUser
+
     return {
         user,
         app,
@@ -72,7 +75,8 @@ const provideAuth = appId => {
         isLoggedIn,
         logout,
         sendPasswordReset,          // initiate password reset
-        resetPassword
+        resetPassword,
+        currentUser
     }
 }
 
